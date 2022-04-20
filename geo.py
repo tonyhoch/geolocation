@@ -71,12 +71,12 @@ def get_loc():
     res = requests.get('http://ip-api.com/json/')
     location_data_one = res.text
     location_data = json.loads(location_data_one)
-    lat = location_data['lat']
-    lng = location_data['lon']
+    #lat = location_data['lat']
+    #lng = location_data['lon']
 
     # fort wayne
-    #lat = 41.093842
-    #lng = -85.139236
+    lat = 41.093842
+    lng = -85.139236
     your_loc = [lat, lng]
     return your_loc
 

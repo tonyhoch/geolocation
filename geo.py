@@ -69,6 +69,7 @@ def add_point_to_map(lat, lng, tooltip, marker_map):
 def get_loc():
     # get user location
     ip_add = socket.gethostbyname(socket.gethostname())
+    st.write(ip_add)
     Print(ip_add)
     res = requests.get(f"http://ip-api.com/json/{ip_add}")
     location_data_one = res.text

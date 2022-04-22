@@ -8,7 +8,7 @@ import math
 import requests
 import json
 from PIL import Image
-
+import socket
 
 
 @st.experimental_memo
@@ -68,7 +68,8 @@ def add_point_to_map(lat, lng, tooltip, marker_map):
 
 def get_loc():
     # get user location
-    res = requests.get('http://ip-api.com/json/')
+    ip_add = socket.gethostbyname(socket.gethostname())
+    res = requests.get(f"http://ip-api.com/json/{ip_add}")
     location_data_one = res.text
     location_data = json.loads(location_data_one)
     lat = location_data['lat']
